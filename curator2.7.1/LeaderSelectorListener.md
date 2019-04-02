@@ -1,0 +1,5 @@
+LeaderSelectorListener该类继承了ConnectionStateListener，当有状态变动时换掉用该listener。
+同时LeaderSelectorListener自己实现了takeLeadership方法，当LeaderSelector获得leader全显时会调用该方法。
+在集群选主的过程中，不出现问题时，LeaderSelector工作的会比较良好，但是一旦是在弱网环境时，特别要注意状态变化时，是否释放Leader权限。
+在我们生产环境中，在弱网或者网络时，如果zk集群的一台节点出现问题，有可能触发SUSPEND或者LOST事件，要谨慎处理。
+尽量SUSPEND事件不做响应，因为如果响应的话，leader释放容易引起整个集群的抖动，间接会造成雪崩问题。
