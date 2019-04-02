@@ -1,6 +1,6 @@
 LeaderSelector
 主要作用：
-在Zk一组有Leader倾向的候选进程中中选择一个作为Leader，采用公平机制，只有一个释放Leader权限其他竞争者才有成为Leader的机会，底层采用InterProcessMutex实现。
+在Zk一组有Leader倾向的候选进程中中选择一个作为Leader，采用公平机制，只有一个释放Leader权限其他竞争者才有成为Leader的机会，底层采用InterProcessMutex实现。通过入队列实现自动Leader竞争
 
 ```java
 /**
