@@ -1,0 +1,1 @@
+LeaderLatch是随机的从竞选者中选择出leader，这一点和LeaderSelector不同
