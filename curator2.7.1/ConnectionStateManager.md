@@ -252,7 +252,7 @@ public class ConnectionStateManager implements Closeable
                     log.warn("There are no ConnectionStateListeners registered.");
                 }
 
-                listeners.forEach
+                listeners.forEach //每个listener都处理这些事件
                     (
                         new Function<ConnectionStateListener, Void>()
                         {
