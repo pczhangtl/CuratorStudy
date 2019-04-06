@@ -86,7 +86,7 @@ public class ConnectionStateManager implements Closeable
      * @param client        the client
      * @param threadFactory thread factory to use or null for a default
      */
-    public ConnectionStateManager(CuratorFramework client, ThreadFactory threadFactory)
+    public ConnectionStateManager(CuratorFramework client, ThreadFastctory threadFactory)
     {
         this.client = client;
         if ( threadFactory == null )
@@ -232,7 +232,7 @@ public class ConnectionStateManager implements Closeable
         log.info("State change: " + state);
 
         notifyAll();
-
+       //如果不能放入state会被抛弃，是否合理？
         while ( !eventQueue.offer(state) )
         {
             eventQueue.poll();
