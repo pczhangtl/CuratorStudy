@@ -142,6 +142,7 @@ public class ConnectionStateManager implements Closeable
      * Change to {@link ConnectionState#SUSPENDED} only if not already suspended and not lost
      * 
      * @return true if connection is set to SUSPENDED
+     * 设置状态为SUSPEND
      */
     public synchronized boolean setToSuspended()
     {
