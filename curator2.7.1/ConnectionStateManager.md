@@ -93,6 +93,7 @@ public class ConnectionStateManager implements Closeable
         {
             threadFactory = ThreadUtils.newThreadFactory("ConnectionStateManager");
         }
+        //单线程处理
         service = Executors.newSingleThreadExecutor(threadFactory);
     }
 
